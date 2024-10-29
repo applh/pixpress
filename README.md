@@ -19,4 +19,8 @@ php -S localhost:4567 public/index.php
 * https://unpkg.com/vue@3.5.12/dist/vue.global.prod.js
 * https://unpkg.com/vue@3.5.12/dist/vue.global.js
 
+## PHP
 
+* Object Oriented programming
+  * static methods and properties
+* Templates

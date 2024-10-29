@@ -4,7 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web App</title>
+    <meta name="description" content="PixPress">
+    <title>PixPress</title>
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/png">
+    <link rel="stylesheet" href="/assets/site.css">
+    <style type="text/css">
+    </style>
+    <script type="module">
+    </script>
 </head>
 
 <body>
@@ -53,7 +60,6 @@
                 loader: () => import('/assets/asc-compo1.js')
             }));
             app.mount('#app');
-
         </script>
     </main>
 </body>

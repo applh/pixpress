@@ -4,7 +4,7 @@ class framework
 {
     static $root = "";
 
-    static function router ()
+    static function router()
     {
         // basic router
         $uri = $_SERVER["REQUEST_URI"];
@@ -32,6 +32,9 @@ class framework
                     case "js":
                         $mime = "text/javascript";
                         break;
+                    case "png":
+                        $mime = "image/png";
+                        break;
                     default:
                         $mime = mime_content_type($file);
                         break;
@@ -50,7 +53,5 @@ class framework
             require_once framework::$root . "/templates/template.php";
             // if file does not exist
         }
-
     }
-
 }
