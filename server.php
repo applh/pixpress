@@ -4,6 +4,9 @@ class server
 {
     static function start()
     {
+        // set timezone
+        date_default_timezone_set("Europe/Paris");
+        // autoload classes
         server::setup_autoloader();
 
         framework::$root = __DIR__;
