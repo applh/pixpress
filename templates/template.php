@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="/assets/site.css">
     <style type="text/css">
     </style>
-    <script type="module">
-    </script>
 </head>
 
 <body>
@@ -28,14 +26,14 @@
         <main>
             <h1><?php echo date("H:i:s"); ?></h1>
             <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
-            <section>
+            <section class="s2">
                 <h2>{{ message }}</h2>
                 <div>
                     <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
                     <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
                 </div>
             </section>
-            <section>
+            <section class="s3">
                 <h3>{{ percent }}%</h3>
                 <div>
                     <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
@@ -43,7 +41,16 @@
                     <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
                 </div>
             </section>
-            <section>
+            <section class="s4">
+                <h4>title4</h4>
+                <div>
+                    <p><?php html::lorem(); ?><img src="/assets/image-4.png" alt="" title=""></p>
+                    <p><?php html::lorem(); ?><img src="/assets/image-4.png" alt="" title=""></p>
+                    <p><?php html::lorem(); ?><img src="/assets/image-4.png" alt="" title=""></p>
+                    <p><?php html::lorem(); ?><img src="/assets/image-4.png" alt="" title=""></p>
+                </div>
+            </section>
+            <section class="s4">
                 <h4>title4</h4>
                 <div>
                     <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
@@ -52,7 +59,7 @@
                     <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
                 </div>
             </section>
-            <section>
+            <section class="s4">
                 <h4>title4</h4>
                 <div>
                     <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
@@ -61,16 +68,7 @@
                     <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
                 </div>
             </section>
-            <section>
-                <h4>title4</h4>
-                <div>
-                    <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
-                    <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
-                    <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
-                    <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
-                </div>
-            </section>
-            <section>
+            <section class="s4">
                 <h4>title4</h4>
                 <div>
                     <p><?php html::lorem(); ?><img src="/assets/image-2.png" alt="" title=""></p>
@@ -80,22 +78,35 @@
                 </div>
             </section>
             <div>
-                <button @click="percent++">Increment</button>
-                <button @click="percent--">Decrement</button>
+                <input type="number" v-model="percent">
+                <button @click="percent--">-</button>
+                <input type="range" v-model="percent" min="0" max="100">
+                <button @click="percent++">+</button>
             </div>
             <div v-if="percent > 0">
                 <asc-compo1></asc-compo1>
             </div>
+            <div>
+                <asc-compo2></asc-compo2>
+            </div>
         </main>
-        <footer></footer>
+        <footer>
+            <p>&copy; <?php echo date("Y"); ?> PixPress</p>
+        </footer>
     </div>
-
+    <script type="importmap">
+        {
+            "imports": {
+                "vue": "/assets/vue.esm-browser.js"
+            }
+        }
+    </script>
     <script type="module">
         import {
             createApp,
             defineAsyncComponent,
             ref
-        } from '/assets/vue.esm-browser.js';
+        } from 'vue';
 
         // add plugin
         import pixpress from '/assets/plugin-pixpress.js';

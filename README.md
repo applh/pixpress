@@ -19,6 +19,18 @@ php -S localhost:4567 public/index.php
 * https://unpkg.com/vue@3.5.12/dist/vue.global.prod.js
 * https://unpkg.com/vue@3.5.12/dist/vue.global.js
 
+### Documentation
+
+* https://vuejs.org/guide/quick-start.html
+
+#### Plugin
+
+* https://vuejs.org/guide/reusability/plugins.html
+
+#### Async Components
+
+* https://vuejs.org/guide/components/async.html
+
 ## PHP
 
 * Object Oriented programming

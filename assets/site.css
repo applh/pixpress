@@ -6,6 +6,10 @@ html, body {
     padding: 0;
 }
 
+body * {
+    box-sizing: border-box;
+}
+
 nav {
     background-color: #333;
     color: white;
@@ -41,15 +45,23 @@ section {
 }
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
+    font-size: 2rem;
+    padding:1rem;
 }
 p {
     padding: 1rem;
     max-width: 640px;
+
+    img {
+        padding-top: 1rem;
+    }
 }
 section {
     padding: 0rem;
     background-image: url('/assets/image.png');
     background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
 }
 
 section div {
@@ -64,6 +76,22 @@ img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+form {
+    display: block;
+    width: 100%;
+    min-width: 600px;
+    > * {
+        display: block;
+        margin: 1rem 0rem;
+        width: 100%;
+        font-size: 1rem;
+    }
+    /* make button full width and same width as input */
+    input, textarea, button {
+        padding: 0.5rem;
+    }
 }
 /* MEDIA QUERIES */
 @media screen and (min-width: 640px) {
@@ -105,4 +133,12 @@ section > div {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 1rem;    
+}
+
+/* IMAGES */
+
+/* only in even */
+
+.s4:nth-of-type(even) {
+    background-image: url('/assets/image-4.png');
 }
