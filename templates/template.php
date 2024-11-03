@@ -92,12 +92,19 @@
         </main>
         <footer>
             <p>&copy; <?php echo date("Y"); ?> PixPress</p>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                </ul>
+            </nav>
         </footer>
     </div>
     <script type="importmap">
         {
             "imports": {
-                "vue": "/assets/vue.esm-browser.js"
+                "vue": "/assets/vue.esm-browser.js",
+                "pixpress": "/assets/plugin-pixpress.js"
             }
         }
     </script>
@@ -109,14 +116,9 @@
         } from 'vue';
 
         // add plugin
-        import pixpress from '/assets/plugin-pixpress.js';
+        import pixpress from 'pixpress';
         let app = createApp({
             setup() {
-                console.log('SETUP / Hello Vue!');
-                const message = ref('SETUP / Hello Vue!')
-                return {
-                    // message
-                }
             },
             data() {
                 console.log('DATA / Hello Vue!');
@@ -128,9 +130,6 @@
         });
         // use plugin
         app.use(pixpress);
-        app.component('asc-compo1', defineAsyncComponent({
-            loader: () => import('/assets/asc-compo1.js')
-        }));
         app.mount('#app');
     </script>
 </body>

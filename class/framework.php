@@ -40,6 +40,15 @@ class framework
             framework::api($basename);
         }
 
+        if ($is_404 && framework::is_admin($basename)) {
+            $is_404 = false;
+            // get template
+            http_response_code(200);
+
+            require_once framework::$root . "/templates/admin.php";
+            // if file does not exist
+        }
+
         if ($is_404 && framework::is_page($basename)) {
             $is_404 = false;
             // get template
@@ -69,13 +78,26 @@ class framework
         return in_array($basename, $pages);
     }
 
+    static function is_admin($basename)
+    {
+        $pages = [
+            "admin",
+        ];
+        return in_array($basename, $pages);
+    }
+
     static function api($basename)
     {
         $timestamp = date("Y-m-d H:i:s");
         $data = [];
         $data["timestamp"] = $timestamp;
+        $data["request"] = $_REQUEST;
         // get api
         switch ($basename) {
+            case "login":
+                $data["feedback"] = "login";
+                $data["token"] = "1234567890";
+                break;
             default:
                 $data["feedback"] = "thanks for using the api ($timestamp)";
                 break;
