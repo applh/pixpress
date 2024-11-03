@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php website::e("lang") ?>">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PixPress">
-    <title>PixPress</title>
-    <link rel="shortcut icon" href="/assets/media/logo.png" type="image/png">
-    <link rel="stylesheet" href="/assets/site.css">
+    <meta charset="<?php website::e("charset") ?>">
+    <meta name="viewport" content="<?php website::e("viewport") ?>">
+    <meta name="description" content="<?php website::e("description") ?>">
+    <meta name="keywords" content="<?php website::e("keywords") ?>">
+    <title><?php website::e("title") ?></title>
+    <link rel="shortcut icon" href="<?php website::e("favicon") ?>" type="image/png">
+    <link rel="stylesheet" href="<?php website::e("css") ?>">
     <style type="text/css">
     </style>
 </head>
