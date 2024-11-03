@@ -4,6 +4,15 @@ class framework
 {
     static $root = "";
 
+    static function load_config()
+    {
+        // load my-config.php if exists
+        $file = framework::$root . "/my-config.php";
+        if (is_file($file)) {
+            include($file);
+        }
+    }
+
     static function router()
     {
         // basic router
@@ -33,14 +42,23 @@ class framework
                 // get assets
                 framework::assets($ext, $file);
             }
-        } 
-        
-        if ($is_404 && $basename && ($dirname == "/api")) {
+        }
+
+        if ($is_404 && framework::is_robots($basename)) {
+            $is_404 = false;
+            // get template
+            http_response_code(200);
+
+            require_once framework::$root . "/templates/robots.php";
+            // if file does not exist
+        }
+
+        if ($is_404 && $basename && str_starts_with($dirname, "/@/api")) {
             $is_404 = false;
             framework::api($basename);
         }
 
-        if ($is_404 && framework::is_admin($basename)) {
+        if ($is_404 && str_starts_with($dirname, "/@") && framework::is_admin($basename)) {
             $is_404 = false;
             // get template
             http_response_code(200);
@@ -64,6 +82,23 @@ class framework
 
             require_once framework::$root . "/templates/template.php";
             // if file does not exist
+        }
+    }
+
+    static function is_robots($basename)
+    {
+        $uri = $_SERVER["REQUEST_URI"];
+        return $uri == "/robots.txt";
+    }
+
+    static function robots($action)
+    {
+        $disallow = ["/@/"];
+        if (!website::$is_public) {
+            $disallow = ["/"];
+        }
+        if ($action == "disallow") {
+            echo implode("\nDisallow: ", $disallow);
         }
     }
 

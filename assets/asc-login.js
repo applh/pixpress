@@ -38,7 +38,7 @@ export default {
             formData.append('email', this.email);
 
             // send to server /api/contact
-            let response = await fetch('/api/login', {
+            let response = await fetch('/@/api/login', {
                 method: 'POST',
                 body: formData
             });

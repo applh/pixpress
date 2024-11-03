@@ -85,7 +85,7 @@
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/admin">Admin</a></li>
+                    <li><a href="/@/admin">Admin</a></li>
                 </ul>
             </nav>
             <p>&copy; <?php echo date("Y"); ?> PixPress</p>

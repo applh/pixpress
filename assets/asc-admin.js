@@ -3,7 +3,7 @@ import pixstore from 'pixstore';
 
 
 let data = {
-    active: 'page1',
+    active: 'dashboard',
     local_token: ''
 };
 
@@ -19,37 +19,37 @@ let template = `
     <aside>
         <nav class="vertical">
             <ul>
-                <li><a href="#page1" @click.prevent="active='page1'">Menu 1</a></li>
-                <li><a href="#page2" @click.prevent="active='page2'">Menu 2</a></li>
-                <li><a href="#page3" @click.prevent="active='page3'">Menu 3</a></li>
-                <li><a href="#page3" @click.prevent="active='page4'">Menu 4</a></li>
-                <li><a href="#page3" @click.prevent="active='page5'">Menu 5</a></li>
+                <li><a href="#dashboard" @click.prevent="active='dashboard'">Dashboard</a></li>
+                <li><a href="#pages" @click.prevent="active='pages'">Pages</a></li>
+                <li><a href="#posts" @click.prevent="active='posts'">Posts</a></li>
+                <li><a href="#media" @click.prevent="active='media'">Media</a></li>
+                <li><a href="#options" @click.prevent="active='options'">Options</a></li>
                 <li><a href="#page3" @click.prevent="act_logout">Logout</a></li>
             </ul>
         </nav>
     </aside>
     <div>
         <h1>ADMIN</h1>
-        <section id="page1" v-if="active=='page1'">
-            <h2>Page 1</h2>
+        <section id="dashboard" v-if="active=='dashboard'">
+            <h2>dashboard</h2>
             <div>token: {{ local_token }}</div>
             <div><input type="text" v-model="local_token" /></div>
             <p>Contenu de la page 1</p>
         </section>
-        <section id="page2" v-if="active=='page2'">
-            <h2>Page 2</h2>
+        <section id="pages" v-if="active=='pages'">
+            <h2>pages</h2>
             <p>Contenu de la page 2</p>
         </section>
-        <section id="page3" v-if="active=='page3'">
-            <h2>Page 3</h2>
+        <section id="posts" v-if="active=='posts'">
+            <h2>posts</h2>
             <p>Contenu de la page 3</p>
         </section>
-        <section id="page4" v-if="active=='page4'">
-            <h2>Page 4</h2>
+        <section id="media" v-if="active=='media'">
+            <h2>media</h2>
             <p>Contenu de la page 3</p>
         </section>
-        <section id="page5" v-if="active=='page5'">
-            <h2>Page 5</h2>
+        <section id="options" v-if="active=='options'">
+            <h2>options</h2>
             <p>Contenu de la page 3</p>
         </section>
     </div>

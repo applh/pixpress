@@ -26,7 +26,7 @@
         /* css grid on .panel-admin */
         .asc-admin {
             display: grid;
-            grid-template-columns: 20fr 80fr;
+            grid-template-columns: 10fr 90fr;
             gap: 1rem;
             background-color: #cccccc;
             width: 100%;
@@ -55,7 +55,7 @@
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/admin">Admin</a></li>
+                    <li><a href="/@/admin">Admin</a></li>
                     <li v-if="token"><a href="#logout" @click.prevent="act_logout">Logout</a></li>
                 </ul>
             </nav>

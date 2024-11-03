@@ -8,8 +8,10 @@ class server
         date_default_timezone_set("Europe/Paris");
         // autoload classes
         server::setup_autoloader();
-
+        // setup framework
         framework::$root = __DIR__;
+        framework::load_config();
+        // start framework
         framework::router();
     }
 

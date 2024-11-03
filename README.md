@@ -2,6 +2,12 @@
 
 Peace WordPress -> PixPress
 
+## framework
+
+### robots.txt
+
+* can be configured in `my-config.php`
+
 # php localhost server
 
 ```bash
