@@ -6,7 +6,7 @@ export default {
         console.log('Login setup');
     },
     template: `
-        <div>
+        <div class="asc-login">
             <b>Login</b>
             <form ref="form_contact" type="POST" @submit.prevent="submit($event)">
                 <input type="email" v-model="email" required placeholder="email" />
@@ -18,8 +18,8 @@ export default {
     `,
     data() {
         return {
-            password: '',
-            email: '',
+            password: '123456',
+            email: 'admin@mysite.com',
             message: 'please fill mandatory fields',
             feedback: ''
         }

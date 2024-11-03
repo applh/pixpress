@@ -19,6 +19,16 @@ php -S localhost:4567 public/index.php
 * https://unpkg.com/vue@3.5.12/dist/vue.global.prod.js
 * https://unpkg.com/vue@3.5.12/dist/vue.global.js
 
+
+### Central data storage
+
+* JS module can easily work as central data storage
+* Also useful to store root vue app
+  * (avoid provide/inject features)
+* WARNING: vue root app is only ready after DOM is loaded
+  * (use `mounted` hook to access root app)
+  * import data store module and wait for mounted hook to store root app
+  
 ### Documentation
 
 * https://vuejs.org/guide/quick-start.html

@@ -23,7 +23,7 @@ class framework
         $is_404 = true;
 
         // if file exists
-        if ($basename && ($dirname == "/assets") && file_exists($file)) {
+        if ($basename && str_starts_with($dirname, "/assets") && file_exists($file)) {
             $is_404 = false;
             // if extension is php
             if ($ext == "php") {

@@ -2,7 +2,7 @@ console.log('Compo 2 loaded');
 
 export default {
     template: `
-        <div>
+        <div class="asc-form-contact">
             <b>Contact Form</b>
             <form ref="form_contact" type="POST" @submit.prevent="submit($event)">
                 <input type="text" v-model="name" required placeholder="name" />

@@ -10,9 +10,12 @@ export default {
     install: (app, options) => {
         console.log('Plugin pixpress admin installé');
 
-        // injecte un composant asynchrone
+        // injecte async components
         app.component('asc-login', defineAsyncComponent({
             loader: () => import('/assets/asc-login.js')
+        }));
+        app.component('asc-admin', defineAsyncComponent({
+            loader: () => import('/assets/asc-admin.js')
         }));
 
         // injecte une méthode globalement disponible $translate()

@@ -8,6 +8,7 @@ html, body {
 
 body * {
     box-sizing: border-box;
+    width: 100%;
 }
 
 nav {
@@ -58,7 +59,7 @@ p {
 }
 section {
     padding: 0rem;
-    background-image: url('/assets/image.png');
+    background-image: url('/assets/media/image.png');
     background-size: cover;
     background-position: top;
     background-attachment: fixed;
@@ -76,6 +77,12 @@ img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.asc-form-contact {
+    max-width: 640px;
+    display: block;
+    margin: 0 auto;
 }
 
 form {
@@ -140,5 +147,5 @@ section > div {
 /* only in even */
 
 .s4:nth-of-type(even) {
-    background-image: url('/assets/image-4.png');
+    background-image: url('/assets/media/image-4.png');
 }
