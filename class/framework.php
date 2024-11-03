@@ -3,11 +3,29 @@
 class framework
 {
     static $root = "";
+    static $config = [
+        "db_file" => "my-data/db.sqlite",
+    ];
+
+    static function get_config($key, $default = "")
+    {
+        switch ($key) {
+            case "db_file":
+                $value = framework::$config["db_file"] ?? $default;
+                // add root
+                $value = framework::$root . "/" . $value;
+                break;
+            default:
+                $value = $default;
+                break;
+        }
+        return $value;
+    }
 
     static function load_config()
     {
         // load my-config.php if exists
-        $file = framework::$root . "/my-config.php";
+        $file = framework::$root . "/my-data/config.php";
         if (is_file($file)) {
             include($file);
         }
@@ -68,19 +86,25 @@ class framework
         }
 
         if ($is_404 && framework::is_page($basename)) {
-            $is_404 = false;
             // get template
-            http_response_code(200);
-
-            require_once framework::$root . "/templates/template.php";
-            // if file does not exist
+            $founds = model::read("pages", "uri", "/$basename");
+            if (!empty($founds)) {
+                $found = $founds[0];
+                $template = $found["template"] ?? "template.php";
+                http_response_code(200);
+                $template_path = framework::$root . "/templates/$template";
+                if (is_file($template_path)) {
+                    $is_404 = false;
+                    require_once $template_path;
+                }
+            }
         }
 
         if ($is_404) {
             // get template
             http_response_code(404);
 
-            require_once framework::$root . "/templates/template.php";
+            require_once framework::$root . "/templates/404.php";
             // if file does not exist
         }
     }
@@ -104,6 +128,7 @@ class framework
 
     static function is_page($basename)
     {
+        $db = db_sqlite::get_db();
         $pages = [
             "",
             "about",

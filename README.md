@@ -19,6 +19,11 @@ php -S localhost:4567 public/index.php
 
 ```
 
+### Markdown Parser
+
+* https://github.com/erusev/parsedown
+  * last release: v1.7.4 / 2019
+
 ## Vue
 
 * https://unpkg.com/browse/vue@3.5.12/dist/
@@ -52,3 +57,10 @@ php -S localhost:4567 public/index.php
 * Object Oriented programming
   * static methods and properties
 * Templates
+
+
+## SQLite
+
+* https://www.sqlite.org/index.html
+* https://www.php.net/manual/en/class.pdo.php
+
