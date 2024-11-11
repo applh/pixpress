@@ -17,6 +17,9 @@ export default {
         app.component('asc-admin', defineAsyncComponent({
             loader: () => import('/assets/asc-admin.js')
         }));
+        app.component('asc-admin-pages', defineAsyncComponent({
+            loader: () => import('/assets/asc-admin-pages.js')
+        }));
 
         // injecte une méthode globalement disponible $translate()
         app.config.globalProperties.$pixpress = (key) => {

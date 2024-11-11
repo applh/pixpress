@@ -37,8 +37,7 @@ let template = `
             <p>Contenu de la page 1</p>
         </section>
         <section id="pages" v-if="active=='pages'">
-            <h2>pages</h2>
-            <p>Contenu de la page 2</p>
+            <asc-admin-pages></asc-admin-pages>
         </section>
         <section id="posts" v-if="active=='posts'">
             <h2>posts</h2>

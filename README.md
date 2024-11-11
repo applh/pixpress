@@ -58,6 +58,13 @@ php -S localhost:4567 public/index.php
   * static methods and properties
 * Templates
 
+### Template Hierarchy
+
+* default.php
+  * page.php
+    * post.php
+  * list.php
+    * tag.php
 
 ## SQLite
 
