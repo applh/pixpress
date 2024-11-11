@@ -158,6 +158,8 @@ class framework
                 $data["feedback"] = "login";
                 $data["token"] = "1234567890";
                 break;
+            case "list":
+                $data["items"] = api_admin::list();
             default:
                 $data["feedback"] = "thanks for using the api ($timestamp)";
                 break;
